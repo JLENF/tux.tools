@@ -1,14 +1,12 @@
-from flask import Flask, jsonify, request, render_template, redirect, make_response
+from flask import Blueprint, render_template, jsonify
 import time
-import locale
-import datetime
-import urllib.request, json
 import random
 import string
 import os
 
-locale.setlocale( locale.LC_ALL, 'pt_BR.UTF-8' )
-app = Flask(__name__) # Create the server object
+tools_bp = Blueprint('tools_bp', __name__,
+                    template_folder='templates/tools',
+                    static_folder='static/tools')
 
 def get_random_password(var_lenght):
     random_source = string.ascii_letters + string.digits + string.punctuation
@@ -19,7 +17,7 @@ def get_random_password(var_lenght):
     # select 1 digit
     password += random.choice(string.digits)
     # select 1 special symbol
-    password += random.choice(string.punctuation)
+    password += random.choice(string.punctuation)   
 
     # generate other characters
     for i in range(int(var_lenght)-4):
@@ -31,26 +29,26 @@ def get_random_password(var_lenght):
     password = ''.join(password_list)
     return password
 
-@app.route("/")
-def hello_world():
-    return render_template('index.html')
+@tools_bp.route("/")
+def main():
+    return jsonify({"answer":"Like a swiss army knife!"})
 
-@app.route("/time")
+@tools_bp.route("/time")
 def get_time():
     return jsonify({"time": int(time.time())})
 
-@app.route("/man")
+@tools_bp.route("/man")
 def man():
     return render_template('man.html')
 
-@app.route("/password")
-@app.route("/password/<var_lenght>")
+@tools_bp.route("/password")
+@tools_bp.route("/password/<var_lenght>")
 def password(var_lenght=12):
     return get_random_password(int(var_lenght))
 
-@app.route("/check/<var_ip>")
-@app.route("/check/<var_ip>/<var_port>")
-@app.route("/check/<var_ip>/<var_port>/<var_protocol>")
+@tools_bp.route("/check/<var_ip>")
+@tools_bp.route("/check/<var_ip>/<var_port>")
+@tools_bp.route("/check/<var_ip>/<var_port>/<var_protocol>")
 def check(var_ip, var_port='null', var_protocol='tcp'):
     if var_ip == 'man':
         return render_template('man-check.html')
@@ -70,9 +68,3 @@ def check(var_ip, var_port='null', var_protocol='tcp'):
         return "{}:{} - open\n".format(var_ip,var_port)
     else:
         return "{}:{} - closed\n".format(var_ip,var_port)
-
-if __name__ == '__main__':
-    #app.run(debug=True)
-    app.debug = True
-    app.run(host="0.0.0.0")
-

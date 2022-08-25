@@ -5,7 +5,7 @@ master = true
 processes = 4
 listen = 2048 
 
-socket = /var/www/python/tux.tools/tux.tools/tux.tools.sock
+socket = /path/to/file.sock
 chmod-socket = 664
 vacuum = true
 
