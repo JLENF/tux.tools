@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, jsonify
 
 bin_bp = Blueprint('bin_bp', __name__,
-                    template_folder='templates',
-                    static_folder='static')
+                    template_folder='templates/bin',
+                    static_folder='static/bin')
 
 @bin_bp.route("/laden")
 def main():

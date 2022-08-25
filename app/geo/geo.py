@@ -2,8 +2,8 @@ from flask import Blueprint, render_template, jsonify
 import json
 
 geo_bp = Blueprint('geo_bp', __name__,
-                    template_folder='templates',
-                    static_folder='static')
+                    template_folder='templates/geo',
+                    static_folder='static/geo')
 
 @geo_bp.route("/")
 def main():

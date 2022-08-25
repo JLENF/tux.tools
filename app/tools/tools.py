@@ -5,8 +5,8 @@ import string
 import os
 
 tools_bp = Blueprint('tools_bp', __name__,
-                    template_folder='templates',
-                    static_folder='static')
+                    template_folder='templates/tools',
+                    static_folder='static/tools')
 
 def get_random_password(var_lenght):
     random_source = string.ascii_letters + string.digits + string.punctuation
@@ -42,7 +42,7 @@ def man():
     return render_template('man.html')
 
 @tools_bp.route("/password")
-@tools_bp.route("/password/str:<var_lenght>")
+@tools_bp.route("/password/<var_lenght>")
 def password(var_lenght=12):
     return get_random_password(int(var_lenght))
 
