@@ -1,0 +1,135 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDWK51VM1H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XDWK51VM1H');
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>tux.tools</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" type="text/css"/>
+</head>
+<body>
+<div class="pure-g">
+    <div class="pure-u-1-5"></div>
+    <div class="pure-u-3-5">
+        <header>
+            <h1 class="header">tux.tools</h1>
+        </header>
+
+        <article>
+            <h2>Useful tools for sysadmins</h2>
+            <p>
+                <a href="https://tux.tools">tux.tools</a> is a set of tools to improve your terminal experience.
+            </p>
+
+            <div style="padding:10px;overflow:auto;width:98%;"><font color="#144427" size="1"><pre>
+                 .88888888:.
+                88888888.88888.
+              .8888888888888888.
+              888888888888888888
+              88' _`88'_  `88888
+              88 88 88 88  88888
+              88_88_::_88_:88888
+              88:::,::,:::::8888
+              88`:::::::::'`8888
+             .88  `::::'    8:88.
+            8888            `8:888.
+          .8888'             `888888.
+         .8888:..  .::.  ...:'8888888:.
+        .8888.'     :'     `'::`88:88888
+       .8888        '         `.888:8888.
+      888:8         .           888:88888
+    .888:88        .:           888:88888:
+    8888888.       ::           88:888888
+    `.::.888.      ::          .88888888
+   .::::::.888.    ::         :::`8888'.:.
+  ::::::::::.888   '         .::::::::::::
+  ::::::::::::.8    '      .:8::::::::::::.
+ .::::::::::::::.        .:888:::::::::::::
+ :::::::::::::::88:.__..:88888:::::::::::'
+  `'.:::::::::::88888888888.88:::::::::'
+miK     `':::_:' -- '' -'-' `':_::::'`
+
+            </pre></font></div>
+
+            <p>Current tools:</p>
+            <code>$ geo.tux.tools</code> - get information for ip
+
+            <p>How to use:</p>
+            <ul>
+                <li></li><code>curl https://geo.tux.tools/8.8.8.8</code> in terminal to get all ip information (json format)
+                <li></li><code>curl https://geo.tux.tools/man</code> to show man page
+            </ul>
+
+            <p>----------------------------------</p>
+
+            <code>$ bin.tux.tools</code> - command line pastebin for sharing terminal output.
+
+            <p>How to use:</p>
+            <ul>
+                <li></li><code>echo just testing! | nc bin.tux.tools 9999</code>
+                <li></li><code>cat file.txt | nc bin.tux.tools 9999</code>
+            </ul>
+            <p>the temporary files (links) are deleted in 24h!</p>
+
+            <p>----------------------------------</p>
+
+            <code>$ tux.tools/password</code> - password generator for terminal.
+
+            <p>How to use:</p>
+            <ul>
+                <li></li><code>curl tux.tools/password</code> - generate password with 12 characters by default
+                <li></li><code>curl tux.tools/password/20</code> - generate password with another length, eg. 20 characters.
+            </ul>
+
+            <h2>About this site</h2>
+
+            <p>
+                <a href="/">tux.tools</a> is powered by sysadmins for sysadmins.
+            </p>
+
+            <p>
+                It's open source, licensed under Apache 2.0:
+                <a href="https://github.com/tux-tools" target="_blank" rel="nofollow">https://github.com/tux-tools</a>
+                &#8212; pull requests are welcome.
+            </p>
+
+            <p>
+                Feedback is appreciated, just send a email to support AT tux.tools.
+            </p>
+
+            <h2>Related Services</h2>
+            <ul>
+                <li>
+                    <a href="https://nip.io/" target="_blank">nip.io</a>:
+                    nip.io allows you to do that by mapping any IP Address to a hostname.
+                </li>
+                <li>
+                    <a href="https://github.com/solusipse/fiche" target="_blank">fiche</a>: Command line pastebin for sharing terminal output.
+                </li>
+                <li>
+                    <a href="https://ipregistry.co/" target="_blank">ipregistry.co</a>: IP Geolocation API service.
+                </li>
+            </ul>
+
+
+        </article>
+    </div>
+    <div class="pure-u-1-5"></div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+<html>
+man for geo.tux.tools<br>
+<br>
+# get all information for ip:<br>
+$ curl https://geo.tux.tools/<IP><br>
+<br>
+eg: <br>
+$ curl https://geo.tux.tools/8.8.8.8<br>
+

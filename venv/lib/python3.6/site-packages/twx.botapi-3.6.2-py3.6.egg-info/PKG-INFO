@@ -1,0 +1,115 @@
+Metadata-Version: 2.1
+Name: twx.botapi
+Version: 3.6.2
+Summary: Unofficial Telegram Bot API Library and Client
+Home-page: https://github.com/datamachine/twx.botapi
+Author: Vince Castellano, Phillip Lopo
+Author-email: surye80@gmail.com, philliplopo@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/datamachine/twx.botapi/archive/3.6.2.zip
+Description: twx.botapi
+        ==========
+        
+        **twx.botapi: Unofficial Telegram Bot API Library and Client**
+        
+          -|-   
+        --:|:--
+        contributions | Please join https://github.com/datamachine/twx.botapi
+        issues | Please use https://github.com/datamachine/twx.botapi/issues
+        Python version supported | 2.7, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6
+        
+        **twx.botapi** is a python interface for the Telegram bot API. It supports
+        making synchronous and asynchronous calls and converts the response into a
+        usable native python object.
+        
+        Support for the MTProto API is in the works, but considered pre-alpha right now.
+        
+        Support
+        -------
+        
+        You can join our support chat at: https://telegram.me/twxapi
+        
+        Install
+        -------
+        
+        For stable:
+        
+        ``pip install twx.botapi``
+        
+        For dev:
+        
+        ``pip install -i https://testpypi.python.org/pypi twx.botapi``
+        
+        Documentation
+        -------------
+        
+        Documentation can be found at http://pythonhosted.org/twx.botapi/
+        
+        Quick Start
+        -----------
+        
+        ```python
+        from twx.botapi import TelegramBot, ReplyKeyboardMarkup
+        
+        """
+        Setup the bot
+        """
+        
+        bot = TelegramBot('<API TOKEN>')
+        bot.update_bot_info().wait()
+        print(bot.username)
+        
+        """
+        Send a message to a user
+        """
+        user_id = int(<someuserid>)
+        
+        result = bot.send_message(user_id, 'test message body').wait()
+        print(result)
+        
+        """
+        Get updates sent to the bot
+        """
+        updates = bot.get_updates().wait()
+        for update in updates:
+            print(update)
+        
+        """
+        Use a custom keyboard
+        """
+        keyboard = [
+            ['7', '8', '9'],
+            ['4', '5', '6'],
+            ['1', '2', '3'],
+                    ['0']
+        ]
+        reply_markup = ReplyKeyboardMarkup.create(keyboard)
+        
+        bot.send_message(user_id, 'please enter a number', reply_markup=reply_markup).wait()
+        ```
+        
+Keywords: datamachine,telex,telegram,bot,api,rpc,twx,chat
+Platform: Linux
+Platform: FreeBSD
+Platform: BSD
+Platform: Unix
+Platform: Mac
+Platform: OS X
+Platform: Windows
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Communications :: File Sharing
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
