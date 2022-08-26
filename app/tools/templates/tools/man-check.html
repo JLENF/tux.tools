@@ -1,0 +1,17 @@
+man for tux.tools/check
+
+### port check - only tcp is working with success ###
+
+Default usage:
+$ curl http://tux.tools/check/IP_ADDRESS/PORT
+
+##### ATENTION #####
+UDP check is under development, may show false positive open ports.
+##### ATENTION #####
+
+If you need a different protocol, use with the parameter (tcp or udp):
+$ curl http://tux.tools/check/IP_ADDRESS/PORT/PROTOCOL
+
+eg - 8.8.8.8 port 53 udp:
+$ curl http://tux.tools/check/8.8.8.8/53/udp
+
