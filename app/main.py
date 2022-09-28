@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
+
 from flask import Flask, render_template
 import locale
 
-from app.tools.tools import tools_bp
-from app.bin.bin import bin_bp
-from app.geo.geo import geo_bp
+from tools.tools import tools_bp
+from bin.bin import bin_bp
+from geo.geo import geo_bp
 
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
