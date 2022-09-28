@@ -2,7 +2,7 @@
 FROM python:3.9.14-alpine
 
 COPY requirements.txt /
-RUN pip3 install -r requirements.txt
+RUN  /usr/local/bin/python -m pip install --upgrade pip > /dev/null 2>&1 && pip install --root-user-action=ignore -r requirements.txt
 
 COPY . /app
 WORKDIR /app
