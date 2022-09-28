@@ -17,4 +17,4 @@ jobs:
       run: |
         echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
         docker image build . --file Dockerfile --tag tux.tools
-        docker push tux.tools
+        docker push docker.io/thiagolinhares/tux.tools
