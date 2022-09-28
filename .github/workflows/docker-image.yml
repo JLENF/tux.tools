@@ -16,5 +16,5 @@ jobs:
     - name: Build and push the Docker image
       run: |
         echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-        docker image build . --file Dockerfile --tag tux.tools
-        docker push docker.io/thiagolinhares/tux.tools
+        docker image build . --file Dockerfile --tag thiagolinhares/tux.tools
+        docker push thiagolinhares/tux.tools
