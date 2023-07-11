@@ -4,6 +4,7 @@ TO-DO: Merge modules into this repo as blueprint submodules
 
 
 Folder structure should follow this rules:
+```
 app
     |--- templates
             |--- static_template.html
@@ -40,3 +41,4 @@ app
     |--- models.py
     |--- config.py
     |--- wsgi.py
+```
